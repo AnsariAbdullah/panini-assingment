@@ -3,6 +3,7 @@ import styled from "styled-components";
 import PropTypes from 'prop-types';
 
 const Container = styled.div`
+	margin: 0 auto;
 	width: 500px;
 	.wrapper{
 		float: right;
@@ -68,6 +69,18 @@ const Container = styled.div`
 			}
 		}
 	}
+	@media (max-width: 425px) {
+		width: 350px;
+	}
+
+	@media (max-width: 375px) {
+		width: 300px;
+	}
+
+	@media (max-width: 320px) {
+		width: 250px;
+	}
+	
 `
 
 const Slider = (props) => {
