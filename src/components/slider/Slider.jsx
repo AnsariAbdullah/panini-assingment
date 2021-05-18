@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import styled from "styled-components";
 import PropTypes from 'prop-types';
 
-
 const Container = styled.div`
 	width: 500px;
 	.wrapper{
@@ -74,17 +73,11 @@ const Container = styled.div`
 const Slider = (props) => {
 	const [newValue, setNewValue] = useState(0);
 
-	const {minVal, maxVal, startValue, endValue} = props;
-	
-	function sliderFunction(event){
-		setNewValue(event.target.value);
-	}
+	const { minVal, maxVal, startValue, endValue } = props;
 
 	function handleChange(event) {
 		setNewValue(event.target.value);
-		console.log(newValue)
-  }
-	
+	}
 
 	return (
 		<Container>
@@ -93,7 +86,7 @@ const Slider = (props) => {
 				<input
 					type="number"
 					className="input-field"
-					min={minVal} 
+					min={minVal}
 					max={maxVal}
 					value={newValue}
 					onChange={handleChange}
@@ -117,10 +110,10 @@ const Slider = (props) => {
 }
 
 Slider.propTypes = {
-	minVal: PropTypes.number,
-	maxVal: PropTypes.number,
-	startValue: PropTypes.string,
-	endValue: PropTypes.string
+	minVal: PropTypes.number.isRequired,
+	maxVal: PropTypes.number.isRequired,
+	startValue: PropTypes.string.isRequired,
+	endValue: PropTypes.string.isRequired
 };
 
 export default Slider;
